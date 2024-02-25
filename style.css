@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(45deg, rgb(0, 102, 14), rgb(7, 35, 126));
+    background-repeat: no-repeat;
+    min-height: 100%;
+    margin: 0;
+    background-attachment: fixed;
+    color: #ccc;
+    font-family: serif;
+}
+
+.hide {
+    display: none;
+}
+
+.flexy {
+    display: flex;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+
+.textbox {
+    width: 600px;
+    height: 150px;
+    margin: 15px auto;
+
+    border: none;
+    font-size: 17px;
+    position: relative;
+}
+
+.text {
+    text-align: center;
+    margin: 10px 35px 10px;
+    height: 50px;
+}
+
+/*text colors*/
+.gold-change {
+    color: gold;
+}
+
+.container {
+    width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+}
+
+/*Name Entry*/
+
+.enter-name {
+    text-align: center;
+    font-size: 20px;
+}
+
+.initial-name {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.sure-buttons {
+    margin-bottom: 20px;
+}
+
+.sure {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.name-confirm {
+    color: gold;
+}
+
+/*Status Screen*/
+
+.status {
+    height: 600px;
+    width: 200px;
+    background-color: rgb(5, 0, 77);
+    border: solid #ccc;
+    border-radius: 12px;
+    flex: 1;
+    margin: 0 0 40px 40px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+}
+
+.char-name {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.stat {
+    margin: 15px 0 0 40px;
+}
+
+.level {
+    font-size: 18px;
+}
+
+.inventory {
+    margin: 15px 0 0 40px;
+}
+
+.inv-section {
+    margin-top: 50px;
+}
+
+/* .num {
+  right: 100px;
+} */
+
+/* Control Buttons*/
+.button-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.main-buttons {
+    height: 300px;
+
+    margin: auto;
+    text-align: center;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+}
+
+.buttons {
+    width: 250px;
+    height: 65px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+
+    font-family: monospace;
+    /* vertical-align: middle; */
+}
+
+.buttons:focus {
+    cursor: pointer;
+}
+
+.buttons:active {
+    transform: scale(0.97);
+}
+
+.extra-screen {
+    height: 390px;
+    width: 300px;
+    /* border: 3px solid;
+  border-radius: 12px; */
+    text-align: center;
+    margin: auto;
+
+    text-align: center;
+    flex: 1;
+}
+
+.extraBtns {
+    width: 250px;
+    height: 35px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
