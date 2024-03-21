@@ -17,10 +17,10 @@ const armorer = document.querySelector(".armorer");
 const store = document.querySelector(".store");
 
 const battleScreen = document.querySelector(".battle");
-const attackBtn = document.querySelector(".attack-btn");
-const defendBtn = document.querySelector(".defend-btn");
-const itemBtn = document.querySelector(".item-btn");
-const runBtn = document.querySelector(".run-btn");
+const attackBtn = document.querySelector("#attack-btn");
+const defendBtn = document.querySelector("#defend-btn");
+const itemBtn = document.querySelector("#item-btn");
+const runBtn = document.querySelector("#run-btn");
 
 const vergeScreen = document.querySelector(".verge");
 
@@ -42,6 +42,7 @@ const charName = document.querySelector(".char-name");
 
 //Stat screen variables
 const levelNum = document.querySelector(".level-num");
+const xpNum = document.querySelector(".xp-num");
 const healthNum = document.querySelector(".health-num");
 const goldNum = document.querySelector(".gold-num");
 const potionNum = document.querySelector(".potion-num");
@@ -56,6 +57,7 @@ const oreNum = document.querySelector(".ore-num");
 //Player State
 let level = 1;
 let xp = 0;
+let xpToNext = 100;
 let health = 100;
 let maxHealth = 100;
 let damage = 15;
@@ -119,6 +121,7 @@ btn1.onclick = function () {
 
 function updatePlayer() {
     levelNum.innerText = level;
+    xpNum.innerText = `${xp}/${xpToNext}`;
     healthNum.innerText = health;
     goldNum.innerText = gold;
     potionNum.innerText = potions;
@@ -139,10 +142,12 @@ const drinkPot = function () {
 };
 
 const levelUp = () => {
+    xp = xp - xpToNext;
+    xpToNext = 100 + level * 25;
     level++;
     text.innerText = `You levelled up! You are now level ${level}!`;
     maxHealth += 10;
-    maxDamage += 0.1;
+    damage += 0.1;
 };
 
 //Inventory & Main Screen
@@ -161,7 +166,7 @@ const closeExtras = function () {
 
 //Combat Functions
 
-const battle = function (enemyName, enemyDamage, enemyHealth) {
+const battle = function (enemyName, enemyDamage, enemyHealth, xpEarned) {
     mainBtns.classList.remove("flexy");
     mainBtns.classList.add("hide");
     battleScreen.classList.remove("hide");
@@ -172,8 +177,13 @@ const battle = function (enemyName, enemyDamage, enemyHealth) {
         health -= enemyDamage * armor;
         console.log(enemyDamage);
         if (enemyHealth <= 0) {
-            text.innerText = `You have defeated the ${enemy}!`;
+            text.innerText = `You have defeated the ${enemyName}! You have earned ${xpEarned} xp.`;
+            xp += xpEarned;
+            if (xp > xpToNext) {
+                levelUp();
+            }
         }
+        updatePlayer();
     });
     defendBtn.addEventListener("click", () => {});
 };
@@ -206,7 +216,7 @@ const enemies = {
 };
 
 const fightOrc = function () {
-    battle("orc", 15, 50);
+    battle("orc", 15, 50, 120);
 };
 
 //DAMAGE PLAYER AFTER EVERY BUTTON PUSH EXCEPT DEFEND?

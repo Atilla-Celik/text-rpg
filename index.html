@@ -1,117 +1,141 @@
 <!DOCTYPE html>
 <html lang="en"></html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>RPG</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>RPG</title>
 </head>
 <body>
-  <h2>That RPG</h2>
+    <h2>That RPG</h2>
 
-  <div class="textbox">
-    <p class="text">
-      Welcome to "That RPG". It's going to be maybe a slightly fun journey.
-    </p>
-  </div>
-
-  <div class="enter-name">
-    <label for="name-input" class="initial-name" id="name-question"
-      >Enter your character's name and press Enter:</label
-    >
-    <label for="name-input" class="initial-name hide" id="invalid-name"
-      >That's not a valid name! Enter your character's name and press Enter:
-    </label>
-    <br />
-    <label for="sure-buttons hide" class="sure sure-question hide"></label>
-    <br />
-    <button class="sure-buttons sure yes-sure hide" name="sure-buttons">
-      Yes, I'm sure
-    </button>
-    <button class="sure-buttons sure no-sure hide" name="sure-buttons">
-      No, let me change
-    </button>
-    <input name="name-input" type="text" class="initial-name" id="name-input" />
-    <br />
-  </div>
-
-  <div class="master-container">
-    <div class="container">
-      <div class="status">
-        <h3 class="char-name">Yelo</h3>
-        <div class="stat-box">
-          <div class="stat level">Level <span class="level-num"></span></div>
-          <div class="stat health">
-            Health: <span class="health-num"></span>
-          </div>
-        </div>
-        <div class="inventory stat-box">
-          <div class="inv-section weapons"><u>Weapons</u></div>
-          <div class="inv-section armor"><u>Armor</u></div>
-          <div class="inv-section items">
-            <u> Items</u>
-            <p class="gold">Gold: <span class="num gold-num"></span></p>
-            <p class="potion">Potion: <span class="num potion-num"></span></p>
-            <p class="feather">Feathers: <span class="feather-num"></span></p>
-            <p class="ore">Ore: <span class="ore-num"></span></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="button-container">
-        <div class="main-buttons flexy">
-          <button class="buttons button1"></button>
-          <button class="buttons button2"></button>
-          <button class="buttons button3"></button>
-          <button class="buttons button4"></button>
-        </div>
-
-        <div class="store extra-screen hide">
-          <button class="extraBtns" id="buyPot">Buy Health Potion</button>
-          <button class="extraBtns" id="buyFeather">Buy Feather</button>
-          <button class="extraBtns" id="buyOre">Buy Ore</button>
-          <button class="extraBtns" id="storeGossip">Gossip</button>
-
-          <button class="extraBtns backMarket">Go back</button>
-        </div>
-
-        <div class="blacksmith extra-screen hide">
-          <button class="extraBtns">Sword - 100</button>
-          <button class="extraBtns">Axe - 200</button>
-          <button class="extraBtns">Spear - 200</button>
-          <button class="extraBtns">Buy ore</button>
-          <button class="extraBtns">Upgrade Weapon</button>
-          <button class="extraBtns">Sell Weapon</button>
-          <button class="extraBtns" id="whyTho">
-            You're a blacksmith, not a pirate. Why do you talk that way?
-          </button>
-          <button class="blackBtn backMarket">Go back</button>
-        </div>
-
-        <div class="armorer extra-screen hide">
-          <button class="extraBtns">Helmet</button>
-          <button class="extraBtns">Armor</button>
-          <button class="extraBtns">Gloves</button>
-          <button class="extraBtns">Greaves</button>
-          <button class="extraBtns">Buy ore</button>
-          <button class="extraBtns">Upgrade armor</button>
-          <button class="extraBtns backMarket">Go back</button>
-        </div>
-
-        <div class="battle extra-screen hide">
-          <button class="extraBtns" id="attack-btn">Attack</button>
-          <button class="extraBtns" id="defend-btn">Defend</button>
-          <button class="extraBtns" id="item-btn">Item</button>
-          <button class="extraBtns" id="run-btn">Run</button>
-        </div>
-
-        <div class="verge extra-screen hide">
-          <button id="revive-yes">Yes</button>
-          <button id="revive-no">No</button>
-        </div>
-      </div>
+    <div class="textbox">
+        <p class="text">
+            Welcome to "That RPG". It's going to be maybe a slightly fun
+            journey.
+        </p>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <div class="enter-name">
+        <label for="name-input" class="initial-name" id="name-question"
+            >Enter your character's name and press Enter:</label
+        >
+        <label for="name-input" class="initial-name hide" id="invalid-name"
+            >That's not a valid name! Enter your character's name and press
+            Enter:
+        </label>
+        <br />
+        <label for="sure-buttons hide" class="sure sure-question hide"></label>
+        <br />
+        <button class="sure-buttons sure yes-sure hide" name="sure-buttons">
+            Yes, I'm sure
+        </button>
+        <button class="sure-buttons sure no-sure hide" name="sure-buttons">
+            No, let me change
+        </button>
+        <input
+            name="name-input"
+            type="text"
+            class="initial-name"
+            id="name-input"
+        />
+        <br />
+    </div>
+
+    <div class="master-container">
+        <div class="container">
+            <div class="status">
+                <h3 class="char-name">Yelo</h3>
+                <div class="stat-box">
+                    <div class="stat level">
+                        Level <span class="level-num"></span>
+                    </div>
+                    <div class="stat xpLeft">
+                        Xp: <span class="xp-num"></span>
+                    </div>
+
+                    <div class="stat health">
+                        Health: <span class="health-num"></span>
+                    </div>
+                </div>
+                <div class="inventory stat-box">
+                    <div class="inv-section weapons"><u>Weapons</u></div>
+                    <div class="inv-section armor"><u>Armor</u></div>
+                    <div class="inv-section items">
+                        <u> Items</u>
+                        <p class="gold">
+                            Gold: <span class="num gold-num"></span>
+                        </p>
+                        <p class="potion">
+                            Potion: <span class="num potion-num"></span>
+                        </p>
+                        <p class="feather">
+                            Feathers: <span class="feather-num"></span>
+                        </p>
+                        <p class="ore">Ore: <span class="ore-num"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <div class="main-buttons flexy">
+                    <button class="buttons button1"></button>
+                    <button class="buttons button2"></button>
+                    <button class="buttons button3"></button>
+                    <button class="buttons button4"></button>
+                </div>
+
+                <div class="store extra-screen hide">
+                    <button class="extraBtns" id="buyPot">
+                        Buy Health Potion
+                    </button>
+                    <button class="extraBtns" id="buyFeather">
+                        Buy Feather
+                    </button>
+                    <button class="extraBtns" id="buyOre">Buy Ore</button>
+                    <button class="extraBtns" id="storeGossip">Gossip</button>
+
+                    <button class="extraBtns backMarket">Go back</button>
+                </div>
+
+                <div class="blacksmith extra-screen hide">
+                    <button class="extraBtns">Sword - 100</button>
+                    <button class="extraBtns">Axe - 200</button>
+                    <button class="extraBtns">Spear - 200</button>
+                    <button class="extraBtns">Buy ore</button>
+                    <button class="extraBtns">Upgrade Weapon</button>
+                    <button class="extraBtns">Sell Weapon</button>
+                    <button class="extraBtns" id="whyTho">
+                        You're a blacksmith, not a pirate. Why do you talk that
+                        way?
+                    </button>
+                    <button class="blackBtn backMarket">Go back</button>
+                </div>
+
+                <div class="armorer extra-screen hide">
+                    <button class="extraBtns">Helmet</button>
+                    <button class="extraBtns">Armor</button>
+                    <button class="extraBtns">Gloves</button>
+                    <button class="extraBtns">Greaves</button>
+                    <button class="extraBtns">Buy ore</button>
+                    <button class="extraBtns">Upgrade armor</button>
+                    <button class="extraBtns backMarket">Go back</button>
+                </div>
+
+                <div class="battle extra-screen hide">
+                    <button class="extraBtns" id="attack-btn">Attack</button>
+                    <button class="extraBtns" id="defend-btn">Defend</button>
+                    <button class="extraBtns" id="item-btn">Item</button>
+                    <button class="extraBtns" id="run-btn">Run</button>
+                </div>
+
+                <div class="verge extra-screen hide">
+                    <button id="revive-yes">Yes</button>
+                    <button id="revive-no">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>

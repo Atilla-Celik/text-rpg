@@ -158,6 +158,10 @@ h2 {
     transform: scale(0.97);
 }
 
+.extraBtns:active {
+    transform: scale(0.97);
+}
+
 .extra-screen {
     height: 390px;
     width: 300px;
