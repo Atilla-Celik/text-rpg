@@ -182,6 +182,7 @@ const battle = function (enemyName, enemyDamage, enemyHealth, xpEarned) {
             if (xp > xpToNext) {
                 levelUp();
             }
+            battleEnd();
         }
         updatePlayer();
     });
@@ -194,7 +195,11 @@ const verge = function () {
     vergeScreen.classList.remove("hide");
 };
 
-// verge();
+const battleEnd = function () {
+    battleScreen.classList.add("hide");
+    mainBtns.classList.remove("hide");
+    mainBtns.classList.add("flexy");
+};
 
 const die = () => {
     text.innerText =
@@ -204,19 +209,12 @@ const die = () => {
     btn1.innerText = "Retry";
 };
 
-const enemies = {
-    orc: {
-        attack: 2,
-        health: 100,
-    },
-    vampire: {
-        attack: 5,
-        health: 500,
-    },
+const fightOrc = () => {
+    battle("orc", 15, 50, 120);
 };
 
-const fightOrc = function () {
-    battle("orc", 15, 50, 120);
+const fightSharkGuy = () => {
+    battle("shark guy", 20, 50, 140);
 };
 
 //DAMAGE PLAYER AFTER EVERY BUTTON PUSH EXCEPT DEFEND?
@@ -231,6 +229,7 @@ const lookCave = () => {
     text.innerText =
         "It is dark and you can't see anything interesting. Although it is a bit cramped. Wait a second... What's this? Well you found 27 gold.";
     gold += 27;
+    updatePlayer();
 };
 const smellCave = () => {
     text.innerText =
@@ -457,13 +456,13 @@ const locations = {
     },
     lake: {
         btnText: ["Go to the ", "", "", "Go back to cliff"],
-        btnFunc: [, , , goWild],
+        btnFunc: [, , fightSharkGuy, goWild],
         text: "",
     },
     mountain: {
         btnText: ["", "", "fight orc", "Go back to cliff"],
         btnFunc: [, , fightOrc, goWild],
-        text: "Up the mountain",
+        text: "Long way up. There is an orc.",
     },
 };
 

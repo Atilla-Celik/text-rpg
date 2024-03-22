@@ -1,1 +1,11 @@
-1 -Level up and xp functionalities added.
+To Do
+
+1- Stats don't align visually, so... Let's do something about that.
+
+2-
+
+
+Done
+
+1) Level up and xp functionalities added.
+

@@ -70,6 +70,7 @@ h2 {
 
 .sure-buttons {
     margin-bottom: 20px;
+    font-family: inherit;
 }
 
 .sure {
@@ -102,16 +103,45 @@ h2 {
 }
 
 .stat {
-    margin: 15px 0 0 40px;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
-.level {
+.stat-item {
+    padding: 10px 10px;
+    width: 30px;
+    font-size: 18px;
+}
+.stat-num {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.item {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.item-item {
+    padding: 10px 10px;
+    width: 30px;
     font-size: 18px;
 }
 
-.inventory {
-    margin: 15px 0 0 40px;
+.item-num {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
 }
+
+/* .inventory {
+    margin: 15px 0 0 40px;
+} */
 
 .inv-section {
     margin-top: 50px;
